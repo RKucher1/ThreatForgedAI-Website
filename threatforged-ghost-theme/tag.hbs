@@ -1,0 +1,64 @@
+{{!< default}}
+
+<div class="page-header">
+  <div class="page-tag">Topic</div>
+  <h1><span>{{name}}</span></h1>
+  {{#if description}}<p>{{description}}</p>{{/if}}
+</div>
+
+<div class="filter-bar">
+  <a href="{{@site.url}}" class="filter-tag">All</a>
+  {{#get "tags" limit="all"}}
+    {{#foreach tags}}
+      <a href="{{url}}" class="filter-tag {{#if (eq slug ../slug)}}active{{/if}}">{{name}}</a>
+    {{/foreach}}
+  {{/get}}
+</div>
+
+<div class="blog-wrap">
+  <div class="post-list">
+    {{#foreach posts}}
+      <article class="post-card">
+        <div class="post-card-header">
+          <div class="post-meta">
+            {{#primary_tag}}
+              <a href="{{url}}" class="post-cat">{{name}}</a>
+            {{/primary_tag}}
+            <span class="post-date">{{date format="MMMM D, YYYY"}}</span>
+            <span class="post-read-time">{{reading_time minute="1 min read" minutes="% min read"}}</span>
+          </div>
+          <h2>{{title}}</h2>
+          <p class="post-excerpt">{{excerpt words="40"}}</p>
+        </div>
+        <div class="post-footer">
+          <a href="{{url}}" class="read-more">Read full post</a>
+          <div class="post-tag-list">
+            {{#foreach tags limit="3"}}
+              <a href="{{url}}" class="post-tag">{{name}}</a>
+            {{/foreach}}
+          </div>
+        </div>
+      </article>
+    {{/foreach}}
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Topics</div>
+      <div class="tag-cloud">
+        {{#get "tags" limit="8"}}
+          {{#foreach tags}}
+            <a href="{{url}}" class="sidebar-tag">{{name}}</a>
+          {{/foreach}}
+        {{/get}}
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-cta">
+        <h4>Is your AD environment actually secure?</h4>
+        <p>Most SMBs don't know until it's too late.</p>
+        <a href="https://threatforged.ai/#contact" class="btn-cta">Book a Demo</a>
+      </div>
+    </div>
+  </aside>
+</div>
