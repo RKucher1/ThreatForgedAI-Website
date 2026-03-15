@@ -1,0 +1,18 @@
+{
+  "name": "threatforged",
+  "description": "ThreatForged AI Ghost Theme",
+  "version": "1.0.0",
+  "author": {
+    "name": "ThreatForged AI",
+    "email": "ryan@threatforged.ai",
+    "url": "https://threatforged.ai"
+  },
+  "engines": {
+    "ghost": ">=6.0.0"
+  },
+  "license": "MIT",
+  "keywords": ["ghost-theme"],
+  "config": {
+    "posts_per_page": 10
+  }
+}

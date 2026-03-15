@@ -1,0 +1,26 @@
+{{!< default}}
+
+<div class="post-hero">
+  <div class="post-meta">
+    <span class="post-date">{{date format="MMMM D, YYYY"}}</span>
+  </div>
+  <h1>{{title}}</h1>
+  {{#if custom_excerpt}}
+    <p class="post-excerpt-large">{{custom_excerpt}}</p>
+  {{/if}}
+</div>
+
+<div class="post-content-wrap">
+  <div class="post-content">
+    {{content}}
+  </div>
+  <aside class="post-sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-cta">
+        <h4>Ready to find what's exploitable?</h4>
+        <p>Book a 30-minute scoping call. No obligation, no sales pitch.</p>
+        <a href="https://threatforged.ai/#contact" class="btn-cta">Book a Demo</a>
+      </div>
+    </div>
+  </aside>
+</div>
