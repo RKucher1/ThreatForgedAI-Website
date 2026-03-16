@@ -2,17 +2,19 @@
 
 {{#post}}
 <div class="post-hero">
-  <div class="post-meta">
-    {{#primary_tag}}
-      <a href="{{url}}" class="post-cat">{{name}}</a>
-    {{/primary_tag}}
-    <span class="post-date">{{date format="MMMM D, YYYY"}}</span>
-    <span class="post-read-time">{{reading_time minute="1 min read" minutes="% min read"}}</span>
+  <div class="post-hero-inner">
+    <div class="post-meta">
+      {{#primary_tag}}
+        <a href="{{url}}" class="post-cat">{{name}}</a>
+      {{/primary_tag}}
+      <span class="post-date">{{date format="MMMM D, YYYY"}}</span>
+      <span class="post-read-time">{{reading_time minute="1 min read" minutes="% min read"}}</span>
+    </div>
+    <h1>{{title}}</h1>
+    {{#if custom_excerpt}}
+      <p class="post-excerpt-large">{{custom_excerpt}}</p>
+    {{/if}}
   </div>
-  <h1>{{title}}</h1>
-  {{#if custom_excerpt}}
-    <p class="post-excerpt-large">{{custom_excerpt}}</p>
-  {{/if}}
 </div>
 
 <div class="post-content-wrap">
