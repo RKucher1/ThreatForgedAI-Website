@@ -7,11 +7,7 @@
     {{/if}}
   </a>
   <ul class="nav-links">
-    <li><a href="https://threatforged.ai/#problem">Problem</a></li>
-    <li><a href="https://threatforged.ai/#solution">Solution</a></li>
-    <li><a href="https://threatforged.ai/pricing.html">Pricing</a></li>
-    <li><a href="https://threatforged.ai/about.html">About</a></li>
-    <li><a href="{{@site.url}}" class="active">Intel</a></li>
+    {{navigation}}
   </ul>
   <a href="https://threatforged.ai/#contact" class="nav-cta">Book a Demo</a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -19,10 +15,6 @@
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="https://threatforged.ai/#problem">Problem</a>
-  <a href="https://threatforged.ai/#solution">Solution</a>
-  <a href="https://threatforged.ai/pricing.html">Pricing</a>
-  <a href="https://threatforged.ai/about.html">About</a>
-  <a href="{{@site.url}}">Intel</a>
+  {{navigation}}
   <a href="https://threatforged.ai/#contact" class="mobile-cta">Book a Demo</a>
 </div>

@@ -17,7 +17,7 @@
 
 <div class="post-content-wrap">
   <div class="post-content">
-    {{content}}
+    {{{content}}}
 
     <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
       <div class="post-tag-list">
@@ -32,7 +32,7 @@
     <div class="sidebar-section">
       <div class="sidebar-label">More posts</div>
       <ul class="sidebar-links">
-        {{#get "posts" limit="5" filter="id:-{{id}}"}}
+        {{#get "posts" limit="6"}}
           {{#foreach posts}}
             <li><a href="{{url}}">{{title}}</a></li>
           {{/foreach}}
