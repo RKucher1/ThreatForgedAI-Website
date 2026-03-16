@@ -12,11 +12,28 @@
   {{#if custom_excerpt}}
     <p class="post-excerpt-large">{{custom_excerpt}}</p>
   {{/if}}
+  
+  {{!-- Added Author Byline --}}
+  {{#primary_author}}
+    <div style="margin-top: 1.5rem; font-family: var(--mono); font-size: 11px; color: var(--cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
+      By {{name}}
+    </div>
+  {{/primary_author}}
 </div>
 
 <div class="post-content-wrap">
   <div class="post-content">
     {{content}}
+
+    {{!-- Added Author Bio Box --}}
+    <div class="post-author-box" style="margin-top: 4rem; padding: 2rem; background: rgba(0,229,255,0.02); border: 1px solid rgba(0,229,255,0.15); border-left: 2px solid var(--cyan);">
+      {{#primary_author}}
+        <h4 class="author-name" style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; line-height: 1.2;">{{name}}</h4>
+        {{#if bio}}
+          <p class="author-bio" style="font-size: 14px; color: var(--steel); line-height: 1.6; margin-bottom: 0;">{{bio}}</p>
+        {{/if}}
+      {{/primary_author}}
+    </div>
 
     <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
       <div class="post-tag-list">
