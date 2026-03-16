@@ -7,7 +7,9 @@
     {{/if}}
   </a>
   <ul class="nav-links">
-    {{navigation}}
+    {{#foreach @site.navigation}}
+      <li><a href="{{url}}">{{label}}</a></li>
+    {{/foreach}}
   </ul>
   <a href="https://threatforged.ai/#contact" class="nav-cta">Book a Demo</a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -15,6 +17,8 @@
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  {{navigation}}
+  {{#foreach @site.navigation}}
+    <a href="{{url}}">{{label}}</a>
+  {{/foreach}}
   <a href="https://threatforged.ai/#contact" class="mobile-cta">Book a Demo</a>
 </div>
