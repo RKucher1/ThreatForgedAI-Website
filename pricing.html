@@ -274,7 +274,7 @@
       <div class="roi-field">
         <label>Number of IPs in scope</label>
         <div class="slider-row">
-          <input type="range" id="ip-count" min="25" max="500" value="75" step="25" oninput="calcROI()">
+          <input type="range" id="ip-count" min="50" max="500" value="75" step="25" oninput="calcROI()">
           <span class="slider-val" id="ip-val">75 IPs</span>
         </div>
       </div>
@@ -293,8 +293,8 @@
         </div>
       </div>
       <div class="roi-savings">
-        <div class="roi-savings-label">Annual savings with ThreatForged AI</div>
-        <div class="roi-savings-val" id="savings-val">$36,500</div>
+        <div class="roi-savings-label">Annual savings vs. consulting</div>
+        <div class="roi-savings-val" id="savings-val">$36,250</div>
       </div>
     </div>
     <div class="roi-results">
@@ -304,9 +304,14 @@
         <div class="roi-result-sub">Based on your inputs above</div>
       </div>
       <div class="roi-result-item">
-        <div class="roi-result-label">ThreatForged AI cost (annual)</div>
-        <div class="roi-result-val" id="tf-annual">$3,500</div>
-        <div class="roi-result-sub">Setup (year 1) + assessments + additional IPs</div>
+        <div class="roi-result-label">ThreatForged AI — recurring annual</div>
+        <div class="roi-result-val" id="tf-annual">$3,750</div>
+        <div class="roi-result-sub">Assessments + additional IPs (no setup)</div>
+      </div>
+      <div class="roi-result-item">
+        <div class="roi-result-label">ThreatForged AI — year 1 total</div>
+        <div class="roi-result-val" id="tf-year1">$4,250</div>
+        <div class="roi-result-sub">Includes $500 one-time setup fee</div>
       </div>
       <div class="roi-result-item">
         <div class="roi-result-label">Cost per IP — consulting</div>
@@ -315,7 +320,7 @@
       </div>
       <div class="roi-result-item">
         <div class="roi-result-label">Cost per IP — ThreatForged AI</div>
-        <div class="roi-result-val" id="tf-per-ip">$23</div>
+        <div class="roi-result-val" id="tf-per-ip">$25</div>
         <div class="roi-result-sub">Per IP per engagement</div>
       </div>
     </div>
@@ -538,16 +543,18 @@ function calcROI() {
   document.getElementById('consult-val').textContent = '$' + consult.toLocaleString();
 
   var consultAnnual = consult * freq;
-  var extraIPs = Math.max(0, ips - 50);
-  var tfPerAssessment = 1500 + (extraIPs * 15);
-  var tfAnnual = (tfPerAssessment * freq) + 500; // setup year 1
-  var savings = consultAnnual - tfAnnual;
+  var extraIPs = Math.max(0, ips - 50);          // IPs beyond the base 50
+  var tfPerAssessment = 1500 + (extraIPs * 15);  // $1,500 base + $15/IP over 50
+  var tfRecurring = tfPerAssessment * freq;       // recurring annual (no setup)
+  var tfYear1 = tfRecurring + 500;               // year 1 only: add $500 one-time setup
+  var savings = consultAnnual - tfRecurring;     // savings vs consulting (recurring basis)
 
   var consultPerIP = Math.round(consult / ips);
   var tfPerIP = Math.round(tfPerAssessment / ips);
 
   document.getElementById('consult-annual').textContent = '$' + consultAnnual.toLocaleString();
-  document.getElementById('tf-annual').textContent = '$' + tfAnnual.toLocaleString();
+  document.getElementById('tf-annual').textContent = '$' + tfRecurring.toLocaleString();
+  document.getElementById('tf-year1').textContent = '$' + tfYear1.toLocaleString();
   document.getElementById('consult-per-ip').textContent = '$' + consultPerIP.toLocaleString();
   document.getElementById('tf-per-ip').textContent = '$' + tfPerIP.toLocaleString();
   document.getElementById('savings-val').textContent = '$' + Math.max(0, savings).toLocaleString();
