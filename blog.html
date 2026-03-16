@@ -166,8 +166,9 @@
             <li>Run Certify or Certipy against your ADCS environment and look for ESC1–ESC8 findings</li>
             <li>Audit certificate templates — anything with "Enrollee Supplies Subject" enabled is a red flag</li>
             <li>Disable HTTP enrollment on ADCS if you don't need it (kills ESC8 relay path)</li>
-            <li>Enable EPA (Extended Protection for Authentication) on IIS</li>
+           <li>Enable EPA (Extended Protection for Authentication) on IIS</li>
           </ul>
+          <a href="pricing.html" class="btn-primary" style="margin-top: 1rem;">Book an ADCS assessment &rarr;</a>
         </div>
         <button class="read-toggle" onclick="togglePost('body-1', this)">Read full post</button>
       </div>
@@ -191,8 +192,9 @@
             <li>SMB signing is frequently disabled on file servers for "performance reasons"</li>
             <li>LDAP signing and channel binding are often not enforced on domain controllers</li>
           </ul>
-          <h3>The three-step fix</h3>
+         <h3>The three-step fix</h3>
           <p>Enable SMB signing across all domain-joined machines, enforce LDAP signing and channel binding on your DCs, and block outbound NTLM to external hosts at the firewall. That alone removes most relay paths without breaking legacy apps.</p>
+          <a href="pricing.html" class="btn-primary" style="margin-top: 1rem;">Test your relay defenses &rarr;</a>
         </div>
         <button class="read-toggle" onclick="togglePost('body-2', this)">Read full post</button>
       </div>
@@ -220,6 +222,7 @@
             <li>Offline, air-gapped backups survive domain-wide encryption</li>
             <li>Regular AD assessments catch the escalation paths before attackers do</li>
           </ul>
+          <a href="pricing.html" class="btn-primary" style="margin-top: 1rem;">Find your attack paths &rarr;</a>
         </div>
         <button class="read-toggle" onclick="togglePost('body-3', this)">Read full post</button>
       </div>
@@ -243,6 +246,7 @@
           <h3>How a pentest helps</h3>
           <p>A scoped penetration test — especially one that maps findings to NCUA's cybersecurity maturity framework — gives you a documented artifact that shows examiners you're proactively testing your controls. Our reports are structured to be examiner-friendly by design.</p>
           <div class="callout">We've had clients use ThreatForged assessment reports directly in NCUA exam responses. The finding-plus-remediation format maps cleanly to examiner expectations.</div>
+          <a href="pricing.html" class="btn-primary" style="margin-top: 1rem;">Get a compliance-ready pentest &rarr;</a>
         </div>
         <button class="read-toggle" onclick="togglePost('body-4', this)">Read full post</button>
       </div>
@@ -308,26 +312,19 @@
     document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
     if (btn) btn.classList.add('active');
   }
-  window.addEventListener('load', function() {
+window.addEventListener('load', function() {
     var hash = window.location.hash;
     if (hash) {
       var post = document.querySelector(hash);
       if (post) {
-        var bodyId = 'body-' + hash.replace('#post-', ''
-
-<footer>
-  <div class="footer-left">
-    <img src="threatforged-svg.svg" alt="ThreatForged AI"> class="footer-logo-img">
-    <span class="footer-tagline">ThreatForged AI — Enterprise-Grade Pentesting for Business: Stay Sharp. Stay Prepared.</span>
-  </div>
-  <div class="footer-right">
-    <ul class="footer-links">
-      <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="terms.html">Terms of Service</a></li>
-    </ul>
-    <span>&copy; 2026 ThreatForged AI. All rights reserved.</span>
-  </div>
-</footer>
+        var bodyId = 'body-' + hash.replace('#post-', '');
+        var btn = post.querySelector('.read-toggle');
+        if (btn) togglePost(bodyId, btn);
+        setTimeout(function() { post.scrollIntoView({behavior: 'smooth'}); }, 100);
+      }
+    }
+  });
+</script>
 
 <script>
   function toggleMenu() {
