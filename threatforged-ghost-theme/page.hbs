@@ -1,6 +1,6 @@
 {{!< default}}
 
-{{#post}}
+{{#if @page.show_title_and_feature_image}}
 <div class="post-hero">
   <div class="post-meta">
     <span class="post-date">{{date format="MMMM D, YYYY"}}</span>
@@ -10,6 +10,7 @@
     <p class="post-excerpt-large">{{custom_excerpt}}</p>
   {{/if}}
 </div>
+{{/if}}
 
 <div class="post-content-wrap">
   <div class="post-content">
@@ -25,4 +26,3 @@
     </div>
   </aside>
 </div>
-{{/post}}
