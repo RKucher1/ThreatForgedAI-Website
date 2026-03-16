@@ -8,7 +8,8 @@
     "url": "https://threatforged.ai"
   },
   "engines": {
-    "ghost": ">=6.0.0"
+    "ghost": ">=6.0.0",
+    "ghost-api": "v5"
   },
   "license": "MIT",
   "keywords": ["ghost-theme"],
