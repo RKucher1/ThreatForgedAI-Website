@@ -316,6 +316,86 @@
     footer { padding: 1.5rem 1rem; }
   }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ThreatForged AI",
+  "url": "https://threatforged.ai",
+  "logo": "https://threatforged.ai/threatforged-svg.svg",
+  "description": "AI-powered penetration testing platform for credit unions, community banks, and SMBs. Enterprise-grade Active Directory security assessments at SMB-friendly pricing.",
+  "founder": {
+    "@type": "Person",
+    "name": "Ryan Kucher",
+    "jobTitle": "Founder & CEO"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Austin",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "ryan@threatforged.ai"
+  },
+  "sameAs": [
+    "https://linkedin.com/in/ryankucher"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "knowsAbout": [
+    "Penetration Testing",
+    "Active Directory Security",
+    "NTLM Relay Attacks",
+    "ADCS Exploitation",
+    "Cybersecurity for Credit Unions"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ThreatForged AI",
+  "url": "https://threatforged.ai"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI Penetration Testing Assessment",
+  "provider": {
+    "@type": "Organization",
+    "name": "ThreatForged AI",
+    "url": "https://threatforged.ai"
+  },
+  "description": "AI-powered internal Active Directory penetration testing for SMBs. Full AD enumeration, NTLM relay testing, ADCS abuse detection, and privilege escalation chain mapping.",
+  "serviceType": "Penetration Testing",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Credit Unions, Community Banks, SMBs"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "1500",
+    "priceCurrency": "USD",
+    "description": "Base Assessment — Full AD assessment up to 50 IPs with compliance-ready report",
+    "url": "https://threatforged.ai/pricing.html"
+  }
+}
+</script>
+ 
 </head>
 <body>
 
@@ -349,7 +429,7 @@
   <div class="hero-grid"></div>
   <div class="hero-scan"></div>
   <div class="hero-label">AI Penetration Testing Platform</div>
-  <h1>Enterprise-grade pentesting.<br><span class="cyan">SMB-friendly pricing.</span><br>No security team required.</h1>
+  <h1>AI penetration testing.<br><span class="cyan">SMB-friendly pricing.</span><br>No security team required.</h1>
   <p class="hero-sub">ThreatForged AI finds what scanners miss — and tells you exactly how to fix it.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-primary">Book a Demo</a>
@@ -546,7 +626,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-label">// Contact</div>
   <h2 class="section-title">Book a demo or request an assessment.</h2>
@@ -567,6 +646,9 @@
         </select>
       </div>
       <div class="form-field"><label>Tell us about your environment</label><textarea name="message" placeholder="Domain size, compliance requirements, previous assessments, timeline..."></textarea></div>
+      
+      <input type="text" name="_gotcha" style="display:none" />
+      
       <button type="submit" class="btn-primary" id="form-submit" style="align-self: flex-start; cursor: pointer; border: none;">Send Request</button>
     </form>
     <div>
