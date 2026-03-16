@@ -173,6 +173,8 @@
   .terminal-body { max-height: 300px; overflow-y: scroll; scrollbar-width: none; }
   .terminal-body::-webkit-scrollbar { display: none; }
   .about-content p { color: var(--muted); font-size: 15px; line-height: 1.85; margin-bottom: 1.25rem; }
+  .founder-photo-wrap { border: 1px solid var(--border); overflow: hidden; min-width: 0; aspect-ratio: 3/4; }
+  .founder-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 
   /* BLOG PREVIEW */
   #blog { padding: 5rem 3rem; }
@@ -478,11 +480,8 @@
       <p style="color: var(--cyan); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.05em;">Austin, TX — <a href="mailto:ryan@threatforged.ai">ryan@threatforged.ai</a></p>
       <a href="#contact" class="btn-primary" style="display: inline-block; margin-top: 1.5rem;">Start a Conversation</a>
     </div>
-    <div class="about-terminal">
-      <div class="terminal-bar">
-        <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-      </div>
-      <div class="terminal-body" id="term-body"></div>
+    <div class="founder-photo-wrap">
+      <img src="images/ryanprofile.jpg" alt="Ryan Kucher — Founder, ThreatForged AI" class="founder-photo">
     </div>
   </div>
 </section>
