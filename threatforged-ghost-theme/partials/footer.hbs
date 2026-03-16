@@ -1,8 +1,6 @@
 <footer class="site-footer">
   <div class="footer-left">
-    {{#if @site.logo}}
-      <img src="{{@site.logo}}" alt="{{@site.title}}" class="footer-logo-img">
-    {{/if}}
+    <img src="{{asset "images/threatforged-svg.svg"}}" alt="{{@site.title}}" class="footer-logo-img">
     <span class="footer-tagline">Stay sharp. Stay prepared.</span>
   </div>
   <div class="footer-right">
@@ -18,6 +16,6 @@
       </li>
       <li><a href="mailto:ryan@threatforged.ai">Contact</a></li>
     </ul>
-    <span class="footer-copy">© {{date format="YYYY"}} ThreatForged™</span>
+    <span class="footer-copy">&copy; {{date format="YYYY"}} ThreatForged&trade;</span>
   </div>
 </footer>

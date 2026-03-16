@@ -18,12 +18,10 @@
   <div class="post-content">
     {{{content}}}
 
-    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-      <div class="post-tag-list">
-        {{#foreach tags}}
-          <a href="{{url}}" class="post-tag">{{name}}</a>
-        {{/foreach}}
-      </div>
+    <div class="post-tag-list" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+      {{#foreach tags}}
+        <a href="{{url}}" class="post-tag">{{name}}</a>
+      {{/foreach}}
     </div>
   </div>
 
@@ -31,7 +29,7 @@
     <div class="sidebar-section">
       <div class="sidebar-label">More posts</div>
       <ul class="sidebar-links">
-        {{#get "posts" limit="6"}}
+        {{#get "posts" limit="5"}}
           {{#foreach posts}}
             <li><a href="{{url}}">{{title}}</a></li>
           {{/foreach}}
@@ -57,7 +55,6 @@
     </div>
   </aside>
 </div>
-
 
 <div class="post-nav">
   {{#prev_post}}<a href="{{url}}" class="back-link">{{title}}</a>{{/prev_post}}
