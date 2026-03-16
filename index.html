@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://threatforged.ai/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ThreatForged AI | Enterprise-Grade Pentesting for SMBs">
-<meta name="twitter:description" content="AI penetration testing for SMBs under 200 employees. $1,500 flat. No security team required.">
+<meta name="twitter:description" content="AI penetration testing for SMBs under 200 employees. $1,500 flat. No security team required. NCUA exams are asking for penetration test results. Cyber insurance carriers are requiring them. Most credit unions don't have one.">
 <meta name="twitter:image" content="https://threatforged.ai/images/og-image.png">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="global.css">
@@ -338,7 +338,7 @@
   <div class="hero-scan"></div>
   <div class="hero-label">AI Penetration Testing Platform</div>
   <h1>AI penetration testing.<br><span class="cyan">SMB-friendly pricing.</span><br>No security team required.</h1>
-  <p class="hero-sub">ThreatForged AI finds what scanners miss — and tells you exactly how to fix it.</p>
+  <p class="hero-sub">ThreatForged AI finds what scanners miss and tells you exactly how to fix it. Trusted by credit unions, community banks, and SMBs running Windows Active Directory.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-primary">Book a Demo</a>
     <a href="#solution" class="btn-secondary">See How It Works</a>
@@ -349,15 +349,15 @@
 <section id="problem">
   <div class="problem-header">
     <div class="section-label">// The Problem</div>
-    <h2 class="section-title">You know you need a pentest. The options just don't work.</h2>
-    <p class="section-sub">Most SMBs know they need penetration testing. Compliance requires it. Cyber insurance demands it. But the options are brutal.</p>
+    <h2 class="section-title">You know you need a pentest. The current options fall short.</h2>
+    <p class="section-sub">Most SMBs know they need penetration testing. What they don't know is whether their Active Directory is already compromised. Compliance requires it. Cyber insurance demands it. The available options rarely fit.</p>
   </div>
   <div class="problem-grid">
     <div class="problem-card">
       <span class="card-num">Option 01</span>
       <div class="price-tag">$15K–$30K</div>
       <h3>Consulting Firms</h3>
-      <p>Per engagement, weeks of wait time, a PDF report you need a security expert to decode. Then do it all again next year.</p>
+      <p>Per engagement, weeks of wait time, a PDF report that requires a security expert to decode. Repeat annually.</p>
     </div>
     <div class="problem-card">
       <span class="card-num">Option 02</span>
@@ -369,7 +369,7 @@
       <span class="card-num">Option 03</span>
       <div class="price-tag">Not enough</div>
       <h3>Vulnerability Scanners</h3>
-      <p>They find known CVEs. They don't chain weaknesses together, exploit credentials, or move laterally. That's what attackers do.</p>
+      <p>They find known CVEs. Attackers chain weaknesses together, exploit credentials, and move laterally. Scanners don't test for that.</p>
     </div>
   </div>
 </section>
@@ -377,28 +377,28 @@
 <!-- SOLUTION -->
 <section id="solution">
   <div class="section-label">// The Solution</div>
-  <h2 class="section-title">An AI pentester that works like the real thing.</h2>
-  <p class="section-sub">ThreatForged AI is an AI agent that thinks and acts like a human pentester — then delivers a report your IT Director can act on.</p>
+  <h2 class="section-title">An AI pentester built for how attacks actually work.</h2>
+  <p class="section-sub">ThreatForged AI is an AI agent that thinks and acts like a human pentester, then delivers a report your IT Director can act on.</p>
   <div class="solution-grid">
     <div class="solution-card">
       <div class="card-icon">Recon & Enumeration</div>
       <h3>Full AD Recon</h3>
-      <p>BloodHound graph analysis, user and group privilege mapping, attack path visualization across your domain.</p>
+      <p>BloodHound graph analysis, user and group privilege mapping, attack path visualization across your domain. You see exactly what attackers see before they act on it.</p>
     </div>
     <div class="solution-card">
       <div class="card-icon">Credential Attacks</div>
       <h3>NTLM Relay & Coercion</h3>
-      <p>PetitPotam, PrinterBug, DFSCoerce — tests whether your environment is vulnerable to credential relay attacks.</p>
+      <p>PetitPotam, PrinterBug, DFSCoerce: tests whether your environment is vulnerable to credential relay attacks. The most common path to domain admin in SMB environments, tested and documented.</p>
     </div>
     <div class="solution-card">
       <div class="card-icon">Certificate Abuse</div>
       <h3>ADCS Exploitation</h3>
-      <p>ESC1, ESC8, ESC15 exploitation against your PKI infrastructure. The most common blind spot in SMB environments.</p>
+      <p>ESC1, ESC8, ESC15 exploitation against your PKI infrastructure. The attack surface most vendors skip entirely.</p>
     </div>
     <div class="solution-card">
       <div class="card-icon">Privilege Escalation</div>
       <h3>Full Domain Takeover</h3>
-      <p>DCSync, pass-the-hash, Kerberoasting, lateral movement chains — every path to domain admin, mapped and documented.</p>
+      <p>DCSync, pass-the-hash, Kerberoasting, lateral movement chains. Every path to domain admin, mapped and documented. If it exists in your environment, the report will show it.</p>
     </div>
   </div>
 </section>
@@ -407,7 +407,7 @@
 <section id="example">
   <div class="section-label">// Real-World Example</div>
   <h2 class="section-title">Full domain compromise in under 15 minutes.</h2>
-  <p class="section-sub">This is the actual attack chain ThreatForged AI runs against a misconfigured SMB environment — the same steps a real attacker would take.</p>
+  <p class="section-sub">This is the actual attack chain ThreatForged AI runs against a misconfigured SMB environment, the same steps a real attacker would take.</p>
   <div class="chain-wrap">
     <div class="chain-title">// attack chain: domain admin via llmnr → adcs → dcsync</div>
     <div class="chain-step">
@@ -435,7 +435,7 @@
       <span class="chain-step-name">DCSync → Domain Admin</span>
       <span class="chain-step-desc">Domain replication rights used to dump all domain credentials. Full domain compromise achieved.</span>
     </div>
-    <div class="chain-result">⚠ Time to domain admin: 14 minutes, 32 seconds — from an unprivileged user account</div>
+    <div class="chain-result">⚠ Time to domain admin: 14 minutes, 32 seconds from an unprivileged user account.</div>
   </div>
 </section>
 
@@ -463,7 +463,7 @@
     </div>
   </div>
   <div class="pricing-note">
-    Compare: typical consulting firm engagement = $15,000–$30,000. ThreatForged AI delivers the same findings at a fraction of the cost.
+    Compare: typical consulting firm engagement = $15,000 to $30,000. ThreatForged AI delivers the same findings at a fraction of the cost.
   </div>
 </section>
 
@@ -473,8 +473,8 @@
     <div class="about-content">
       <div class="section-label">// About</div>
       <h2 class="section-title">Built by a practitioner, not a product team.</h2>
-      <p>ThreatForged AI was founded by Ryan Kucher after years of hands-on AD assessments inside credit unions and community banks. We know your environment because we've broken into ones just like it — legally, under scope, on behalf of clients who needed to know the truth.</p>
-      <p>Our AI-assisted methodology combines an automated attack reasoning engine with practitioner-built runbooks covering NTLM relay, ADCS exploitation, coercion techniques, BloodHound analysis, and DCSync. You get the depth of a manual engagement at a fraction of the cost — with a report your IT Director can act on today.</p>
+      <p>ThreatForged AI was founded by Ryan Kucher after years of hands-on AD assessments inside credit unions and community banks. We know your environment because we've worked inside ones just like it, legally, under scope, on behalf of clients who needed to know the truth.</p>
+      <p>Our AI-assisted methodology combines an automated attack reasoning engine with practitioner-built runbooks covering NTLM relay, ADCS exploitation, coercion techniques, BloodHound analysis, and DCSync. You get the depth of a manual engagement at a fraction of the cost, with a report your IT Director can act on today.</p>
       <p style="color: var(--cyan); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.05em;">Austin, TX — <a href="mailto:ryan@threatforged.ai">ryan@threatforged.ai</a></p>
       <a href="#contact" class="btn-primary" style="display: inline-block; margin-top: 1.5rem;">Start a Conversation</a>
     </div>
@@ -493,7 +493,7 @@
     <div>
       <div class="section-label">// SMB Intel</div>
       <h2 class="section-title" style="margin-bottom: 0.5rem;">Threat intel, translated.</h2>
-      <p class="section-sub" style="margin-bottom: 0;">Cyber news that actually matters to your IT team — no jargon, no filler.</p>
+      <p class="section-sub" style="margin-bottom: 0;">Cyber news that actually matters to your IT team. No jargon. No filler.</p>
     </div>
     <a href="https://blog.threatforged.ai" class="view-all">All posts</a>
   </div>
@@ -512,7 +512,7 @@
     </a>
     <a href="https://blog.threatforged.ai/ransomware-playbook-smbs/" class="blog-card">
       <div class="blog-meta"><span class="blog-cat">Ransomware</span><span class="blog-date">Jan 2026</span></div>
-      <h3>The ransomware playbook attackers run on SMBs — step by step</h3>
+      <h3>The ransomware playbook attackers run on SMBs, step by step</h3>
       <p>Most ransomware groups follow the same internal AD attack chain. Knowing the steps lets you break it.</p>
       <span class="blog-read">Read more →</span>
     </a>
@@ -522,7 +522,7 @@
 <section id="contact">
   <div class="section-label">// Contact</div>
   <h2 class="section-title">Book a demo or request an assessment.</h2>
-  <p class="section-sub">We work with a limited number of clients at a time. Reach out to check availability and scope.</p>
+  <p class="section-sub">Assessments run on a scheduled basis. Reach out to check current availability and confirm scope before your next exam cycle.</p>
   <div class="contact-wrap">
     <form class="contact-form" id="contact-form" action="https://formspree.io/f/mreyyzdp" method="POST">
       <div class="form-field"><label>Full Name</label><input type="text" name="name" placeholder="Jane Smith" required></div>
