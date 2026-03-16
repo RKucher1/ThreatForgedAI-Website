@@ -22,7 +22,7 @@
 }
 
 /* ═══════════════════════════════════════════════ BASE */
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body { background: var(--navy); color: var(--steel); font-family: var(--sans); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
 img { max-width: 100%; }
 
@@ -101,7 +101,7 @@ footer { padding: 2rem 3rem; border-top: 1px solid var(--border); display: flex;
 .footer-logo-img { height: 40px; width: auto; }
 .footer-tagline { font-family: var(--mono); font-size: 11px; color: var(--steel); letter-spacing: 0.06em; }
 .footer-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-.footer-links { display: flex; gap: 1.25rem; list-style: none; }
+.footer-links { display: flex; gap: 1.25rem; list-style: none; flex-wrap: wrap; }
 .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 0.35rem; }
 .footer-links a:hover { color: var(--steel); }
 .footer-copy { font-size: 12px; color: var(--muted); }
