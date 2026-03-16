@@ -1,4 +1,4 @@
-/* ThreatForged AI Ghost Theme — screen.css */
+/* ThreatForged AI Ghost Theme — screen.css v2 */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
@@ -23,7 +23,6 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 3rem; background: rgba(10,22,40,0.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
 .site-nav-logo { display: flex; align-items: center; text-decoration: none; }
 .site-nav-logo img { height: 40px; width: auto; }
-.site-nav-logo span { font-family: var(--mono); font-size: 14px; color: var(--cyan); letter-spacing: 0.08em; text-transform: uppercase; }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { font-size: 13px; font-weight: 500; color: var(--steel); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
 .nav-links a:hover { color: #fff; }
@@ -49,12 +48,12 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 .page-header h1 span { color: var(--cyan); }
 .page-header p { color: var(--steel); max-width: 540px; font-size: 1.05rem; position: relative; }
 
-/* FILTERS / TAGS */
+/* FILTERS */
 .filter-bar { padding: 1.25rem 3rem; border-bottom: 1px solid var(--border); display: flex; gap: 0.5rem; flex-wrap: wrap; background: rgba(255,255,255,0.02); }
 .filter-tag { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel); background: transparent; border: 1px solid var(--border); padding: 0.4rem 1rem; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
 .filter-tag:hover, .filter-tag.active { color: var(--navy); border-color: var(--cyan); background: var(--cyan); }
 
-/* BLOG INDEX LAYOUT */
+/* BLOG INDEX */
 .blog-wrap { display: grid; grid-template-columns: 1fr 280px; max-width: 1280px; margin: 0 auto; }
 .post-list { padding: 2.5rem 3rem; display: flex; flex-direction: column; gap: 2rem; border-right: 1px solid var(--border); }
 
@@ -63,7 +62,7 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 .post-card:hover { background: rgba(0,229,255,0.03); border-color: rgba(0,229,255,0.2); }
 .post-card-header { padding: 1.75rem 2rem 1.25rem; }
 .post-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
-.post-cat { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: var(--cyan); padding: 0.2rem 0.6rem; }
+.post-cat { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: var(--cyan); padding: 0.2rem 0.6rem; text-decoration: none; }
 .post-date { font-family: var(--mono); font-size: 11px; color: var(--steel); }
 .post-read-time { font-family: var(--mono); font-size: 11px; color: var(--muted); }
 .post-card h2 { font-size: 1.2rem; font-weight: 700; line-height: 1.35; color: #fff; margin-bottom: 0.75rem; }
@@ -72,7 +71,7 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 .read-more { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
 .read-more::after { content: '→'; }
 .read-more:hover { opacity: 0.8; }
-.post-tag-list { display: flex; gap: 0.4rem; }
+.post-tag-list { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 .post-tag { font-family: var(--mono); font-size: 10px; color: var(--muted); border: 1px solid var(--border); padding: 0.15rem 0.5rem; text-decoration: none; }
 .post-tag:hover { color: var(--cyan); border-color: rgba(0,229,255,0.3); }
 
@@ -107,11 +106,11 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 .post-content h3 { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--cyan); margin: 2rem 0 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
 .post-content ul, .post-content ol { padding-left: 1.5rem; margin-bottom: 1.5rem; max-width: 720px; }
 .post-content ul li, .post-content ol li { font-size: 16px; color: var(--steel); line-height: 1.85; margin-bottom: 0.5rem; }
-.post-content blockquote { background: rgba(0,229,255,0.05); border-left: 2px solid var(--cyan); padding: 1rem 1.5rem; margin: 2rem 0; border-radius: 0 2px 2px 0; }
+.post-content blockquote { background: rgba(0,229,255,0.05); border-left: 2px solid var(--cyan); padding: 1rem 1.5rem; margin: 2rem 0; }
 .post-content blockquote p { font-size: 15px; font-style: italic; color: var(--steel); margin-bottom: 0; }
-.post-content pre { background: rgba(0,0,0,0.4); border: 1px solid var(--border); padding: 1.5rem; margin: 1.5rem 0; overflow-x: auto; border-radius: 2px; }
-.post-content code { font-family: var(--mono); font-size: 13px; color: var(--cyan); background: rgba(0,229,255,0.08); padding: 0.15rem 0.4rem; border-radius: 2px; }
-.post-content pre code { background: none; padding: 0; color: var(--steel); font-size: 13px; }
+.post-content pre { background: rgba(0,0,0,0.4); border: 1px solid var(--border); padding: 1.5rem; margin: 1.5rem 0; overflow-x: auto; }
+.post-content code { font-family: var(--mono); font-size: 13px; color: var(--cyan); background: rgba(0,229,255,0.08); padding: 0.15rem 0.4rem; }
+.post-content pre code { background: none; padding: 0; color: var(--steel); }
 .post-content a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(0,229,255,0.3); transition: border-color 0.2s; }
 .post-content a:hover { border-color: var(--cyan); }
 .post-content img { max-width: 100%; height: auto; border: 1px solid var(--border); margin: 1.5rem 0; }
@@ -120,7 +119,7 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 /* POST SIDEBAR */
 .post-sidebar { padding: 3rem 2rem; position: sticky; top: 5rem; align-self: start; }
 
-/* AUTHOR / BACK NAV */
+/* POST NAV */
 .post-nav { padding: 1.5rem 3rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; background: var(--navy-dark); }
 .post-nav a { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
 .post-nav a:hover { opacity: 0.8; }
@@ -132,17 +131,6 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 .pagination a, .pagination span { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.5rem 1rem; border: 1px solid var(--border); color: var(--steel); text-decoration: none; transition: all 0.2s; }
 .pagination a:hover { color: var(--cyan); border-color: rgba(0,229,255,0.3); }
 .pagination .current { color: var(--navy); background: var(--cyan); border-color: var(--cyan); }
-
-/* FOOTER */
-.site-footer { padding: 2rem 3rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-.footer-left { display: flex; align-items: center; gap: 1.5rem; }
-.footer-logo-img { height: 32px; width: auto; }
-.footer-tagline { font-family: var(--mono); font-size: 11px; color: var(--steel); letter-spacing: 0.06em; }
-.footer-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-.footer-links { display: flex; gap: 1.25rem; list-style: none; }
-.footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 0.35rem; }
-.footer-links a:hover { color: var(--steel); }
-.footer-copy { font-size: 12px; color: var(--muted); }
 
 /* GHOST KOENIG CARDS */
 .kg-width-wide { margin-left: calc(50% - 50vw + 3rem); margin-right: calc(50% - 50vw + 3rem); }
@@ -156,9 +144,7 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 .kg-gallery-image { flex: 1; object-fit: cover; width: 100%; }
 .kg-embed-card { margin: 1.5rem 0; }
 .kg-embed-card iframe { max-width: 100%; }
-.kg-video-card { margin: 1.5rem 0; }
-.kg-video-card video { max-width: 100%; }
-.kg-callout-card { display: flex; gap: 1rem; padding: 1.25rem; margin: 1.5rem 0; border-radius: 2px; background: rgba(0,229,255,0.05); border-left: 2px solid var(--cyan); }
+.kg-callout-card { display: flex; gap: 1rem; padding: 1.25rem; margin: 1.5rem 0; background: rgba(0,229,255,0.05); border-left: 2px solid var(--cyan); }
 .kg-callout-emoji { font-size: 1.25rem; line-height: 1.5; }
 .kg-callout-text { font-size: 15px; color: var(--steel); line-height: 1.7; }
 .kg-toggle-card { border: 1px solid var(--border); margin: 1.5rem 0; padding: 1rem 1.25rem; }
@@ -174,6 +160,17 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 .kg-bookmark-title { font-weight: 700; color: #fff; font-size: 14px; margin-bottom: 0.4rem; }
 .kg-bookmark-description { font-size: 13px; color: var(--muted); line-height: 1.5; }
 .kg-bookmark-thumbnail { width: 140px; object-fit: cover; }
+
+/* FOOTER */
+.site-footer { padding: 2rem 3rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-left { display: flex; align-items: center; gap: 1.5rem; }
+.footer-logo-img { height: 32px; width: auto; }
+.footer-tagline { font-family: var(--mono); font-size: 11px; color: var(--steel); letter-spacing: 0.06em; }
+.footer-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 1.25rem; list-style: none; }
+.footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 0.35rem; }
+.footer-links a:hover { color: var(--steel); }
+.footer-copy { font-size: 12px; color: var(--muted); }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
