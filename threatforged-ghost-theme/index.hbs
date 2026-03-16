@@ -19,6 +19,11 @@
   <div class="post-list">
     {{#foreach posts}}
       <article class="post-card">
+        {{#if feature_image}}
+          <a href="{{url}}" class="post-card-image-link">
+            <img class="post-card-image" src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" loading="lazy">
+          </a>
+        {{/if}}
         <div class="post-card-header">
           <div class="post-meta">
             {{#primary_tag}}
