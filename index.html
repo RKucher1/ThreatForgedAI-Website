@@ -15,56 +15,9 @@
 <meta name="twitter:description" content="AI penetration testing for SMBs under 200 employees. $1,500 flat. No security team required.">
 <meta name="twitter:image" content="https://threatforged.ai/images/og-image.png">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="global.css">
 <link rel="canonical" href="https://threatforged.ai/">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy: #0A1628;
-    --navy-dark: #04060D;
-    --red: #FF6B6B;
-    --cyan: #00E5FF;
-    --orange: #FF6B35;
-    --steel: #C9D1D9;
-    --muted: #8896A8;
-    --border: rgba(255,255,255,0.08);
-    --grid: rgba(0,229,255,0.08);
-    --sans: 'Inter', system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
-    --mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Courier New', monospace;
-  }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--navy);
-    color: var(--steel);
-    font-family: var(--sans);
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 3rem;
-    background: rgba(10,22,40,0.92);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
-  .nav-logo img { height: 48px; width: auto; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { font-size: 13px; font-weight: 500; color: var(--steel); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
-  .nav-links a:hover { color: #fff; }
-  .nav-cta {
-    font-family: var(--mono); font-size: 12px; font-weight: 700;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--navy); background: var(--cyan);
-    border: none; padding: 0.6rem 1.5rem;
-    text-decoration: none; display: inline-block;
-    transition: opacity 0.2s;
-  }
-  .nav-cta:hover { opacity: 0.85; }
-
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -107,35 +60,23 @@
     position: relative; text-align: center;
   }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; position: relative; justify-content: center; }
-  .btn-primary {
-    font-family: var(--mono); font-size: 12px; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--navy); background: var(--cyan);
-    border: none; padding: 0.9rem 2rem;
-    text-decoration: none; display: inline-block; transition: opacity 0.2s;
-  }
-  .btn-primary:hover { opacity: 0.85; }
-  .btn-secondary {
-    font-family: var(--mono); font-size: 12px; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--cyan); background: transparent;
-    border: 1px solid rgba(0,229,255,0.35); padding: 0.9rem 2rem;
-    text-decoration: none; display: inline-block; transition: background 0.2s;
-  }
-  .btn-secondary:hover { background: rgba(0,229,255,0.08); }
-
   /* PROBLEM BLOCK */
   #problem { padding: 5rem 3rem; background: var(--navy-dark); }
-  .problem-header { margin-bottom: 3rem; }
+  .problem-header { margin-bottom: 3rem; text-align: center; }
   .section-label {
     font-family: var(--mono); font-size: 12px; font-weight: 700;
     color: var(--orange); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem;
+    text-align: center;
   }
   .section-title {
     font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700;
     color: #fff; line-height: 1.15; max-width: 640px; margin-bottom: 1rem;
+    margin-left: auto; margin-right: auto; text-align: center;
   }
-  .section-sub { color: var(--muted); max-width: 560px; font-weight: 400; }
+  .section-sub { color: var(--muted); max-width: 560px; font-weight: 400; text-align: center; margin-left: auto; margin-right: auto; }
+  /* keep about/blog section headers left-aligned in their multi-column layouts */
+  .about-content .section-label, .about-content .section-title { text-align: left; margin-left: 0; }
+  .blog-header .section-label, .blog-header .section-title, .blog-header .section-sub { text-align: left; margin-left: 0; margin-right: 0; }
   .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 2.5rem; }
   .problem-card {
     background: var(--navy-dark); padding: 2rem;
@@ -267,41 +208,11 @@
   .cd-val a { color: var(--cyan); text-decoration: none; }
   .cd-val a:hover { opacity: 0.8; }
 
-  /* FOOTER */
-  footer { padding: 2rem 3rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .footer-left { display: flex; align-items: center; gap: 1.5rem; }
-  .footer-logo-img { height: 40px; width: auto; }
-  .footer-tagline { font-family: var(--mono); font-size: 12px; color: var(--steel); letter-spacing: 0.06em; }
-  .footer-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-  .footer-links { display: flex; gap: 1.25rem; list-style: none; }
-  .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 0.35rem; }
-  .footer-links a:hover { color: var(--steel); }
-  .footer-copy { font-size: 12px; color: var(--muted); }
-
-
-  img { max-width: 100%; }
-
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; background: none; border: none; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; }
-  .hamburger span { display: block; width: 24px; height: 2px; background: var(--steel); transition: all 0.3s; }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-menu { display: none; position: fixed; top: 80px; left: 0; right: 0; background: rgba(10,22,40,0.98); border-bottom: 1px solid var(--border); padding: 1.5rem 2rem; flex-direction: column; gap: 1.25rem; z-index: 99; }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a { font-size: 15px; font-weight: 500; color: var(--steel); text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid var(--border); min-height: 44px; display: flex; align-items: center; }
-  .mobile-menu a:last-child { border-bottom: none; }
-  .mobile-menu .mobile-cta { color: var(--cyan); font-family: var(--mono); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  /* ── RESPONSIVE (index-specific) */
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .nav-cta { display: none; }
-    .hamburger { display: flex; }
-    .hero, section, #contact, #about, #problem, #solution, #example, #pricing, #blog { padding: 4rem 1.5rem; }
-    .hero { padding-top: 6rem; }
+    .hero { padding: 6rem 1.5rem 4rem; }
     .about-grid { grid-template-columns: 1fr; }
     .contact-wrap { grid-template-columns: 1fr; }
-    footer { flex-direction: column; }
-    .footer-right { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   }
   @media (max-width: 768px) {
     .pricing-grid { grid-template-columns: 1fr; }
@@ -311,9 +222,7 @@
     .chain-step { flex-direction: column; gap: 0.5rem; }
     .chain-step-name { min-width: unset; }
     .chain-wrap { padding: 1rem; }
-    .hero, section, #contact, #about, #problem, #solution, #example, #pricing, #blog { padding: 3rem 1rem; }
-    .hero { padding-top: 5.5rem; }
-    footer { padding: 1.5rem 1rem; }
+    .hero { padding: 5.5rem 1rem 3rem; }
   }
 </style>
 
@@ -404,23 +313,19 @@
     <img src="threatforged-svg.svg" alt="ThreatForged AI">
   </a>
   <ul class="nav-links">
-    <li><a href="#problem">Problem</a></li>
-    <li><a href="#solution">Solution</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="https://blog.threatforged.ai">Intel</a></li>
+    <li><a href="https://blog.threatforged.ai">Blog</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Book a Demo</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#problem" onclick="closeMenu()">Problem</a>
-  <a href="#solution" onclick="closeMenu()">Solution</a>
   <a href="pricing.html" onclick="closeMenu()">Pricing</a>
   <a href="about.html" onclick="closeMenu()">About</a>
-  <a href="https://blog.threatforged.ai" onclick="closeMenu()">Intel</a>
+  <a href="https://blog.threatforged.ai" onclick="closeMenu()">Blog</a>
   <a href="#contact" onclick="closeMenu()" class="mobile-cta">Book a Demo</a>
 </div>
 
@@ -554,7 +459,7 @@
       <div class="pricing-desc">Expand scope beyond the base 50 IPs. Billed per additional IP assessed.</div>
     </div>
   </div>
-  <div class="pricing-note" style="font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 1.5rem;">
+  <div class="pricing-note">
     Compare: typical consulting firm engagement = $15,000–$30,000. ThreatForged AI delivers the same findings at a fraction of the cost.
   </div>
 </section>
@@ -567,7 +472,7 @@
       <h2 class="section-title">Built by a practitioner, not a product team.</h2>
       <p>ThreatForged AI was founded by Ryan Kucher after years of hands-on AD assessments inside credit unions and community banks. We know your environment because we've broken into ones just like it — legally, under scope, on behalf of clients who needed to know the truth.</p>
       <p>Our AI-assisted methodology combines an automated attack reasoning engine with practitioner-built runbooks covering NTLM relay, ADCS exploitation, coercion techniques, BloodHound analysis, and DCSync. You get the depth of a manual engagement at a fraction of the cost — with a report your IT Director can act on today.</p>
-      <p style="color: var(--cyan); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.05em;">Austin, TX — <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="502229313e10243822353124363f223735347e3139">[email&#160;protected]</a></p>
+      <p style="color: var(--cyan); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.05em;">Austin, TX — <a href="mailto:ryan@threatforged.ai">ryan@threatforged.ai</a></p>
       <a href="#contact" class="btn-primary" style="display: inline-block; margin-top: 1.5rem;">Start a Conversation</a>
     </div>
     <div class="about-terminal">
@@ -595,7 +500,7 @@
 </section>
 
 <!-- BLOG PREVIEW -->
-<section id="blog" style="background: var(--navy);">
+<section id="blog">
   <div class="blog-header">
     <div>
       <div class="section-label">// SMB Intel</div>
@@ -653,7 +558,7 @@
     </form>
     <div>
       <div class="contact-detail"><span class="cd-label">Response time</span><span class="cd-val">Within 24 hours</span></div>
-      <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="/cdn-cgi/l/email-protection#cbb9b2aaa58bbfa3b9aeaabfada4b9acaeafe5aaa2"><span class="__cf_email__" data-cfemail="205259414e60544852454154464f524745440e4149">[email&#160;protected]</span></a></span></div>
+      <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="mailto:ryan@threatforged.ai">ryan@threatforged.ai</a></span></div>
       <div class="contact-detail"><span class="cd-label">Engagement type</span><span class="cd-val">Scoped, fixed-price assessments</span></div>
       <div class="contact-detail"><span class="cd-label">Sectors served</span><span class="cd-val">Any SMB under 200 employees running Active Directory — credit unions, law firms, manufacturers, MSPs, healthcare, and more</span></div>
       <div class="contact-detail"><span class="cd-label">Location</span><span class="cd-val">Austin, TX — remote assessments available nationwide</span></div>
@@ -685,16 +590,7 @@
   </div>
 </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('mobile-menu').classList.toggle('open');
-    document.getElementById('hamburger').classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('mobile-menu').classList.remove('open');
-    document.getElementById('hamburger').classList.remove('open');
-  }
-</script>
+<script src="scripts.js"></script>
 
 </body>
 </html>
