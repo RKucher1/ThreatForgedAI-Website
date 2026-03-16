@@ -120,7 +120,7 @@
     background: rgba(255,255,255,0.02); border: 1px solid var(--border);
     padding: 2rem; margin-top: 2.5rem; font-family: var(--mono);
   }
-  .chain-title { font-size: 12px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .chain-title { font-size: 12px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem; text-align: center; }
   .chain-step {
     display: flex; align-items: flex-start; gap: 1.25rem;
     padding: 0.75rem 0; border-bottom: 1px solid var(--border);
@@ -169,6 +169,9 @@
   .t-threat { color: var(--red); font-weight: 700; }
   .cursor { display: inline-block; width: 8px; height: 14px; background: var(--cyan); vertical-align: middle; animation: blink 1.2s step-end infinite; }
   @keyframes blink { 50% { opacity: 0; } }
+  .t-hash { color: var(--orange); }
+  .terminal-body { max-height: 300px; overflow-y: scroll; scrollbar-width: none; }
+  .terminal-body::-webkit-scrollbar { display: none; }
   .about-content p { color: var(--muted); font-size: 15px; line-height: 1.85; margin-bottom: 1.25rem; }
 
   /* BLOG PREVIEW */
@@ -479,22 +482,7 @@
       <div class="terminal-bar">
         <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
       </div>
-      <div class="terminal-body">
-        <div><span class="t-prompt">$</span> ./threatforged --phase enum --target corp.local</div>
-        <div><span class="t-out">[*] BloodHound collection started...</span></div>
-        <div><span class="t-out">[+] Users: </span><span class="t-val">847</span><span class="t-out">  Computers: </span><span class="t-val">203</span></div>
-        <div><span class="t-threat">[!] Kerberoastable SPNs: 12</span></div>
-        <div>&nbsp;</div>
-        <div><span class="t-prompt">$</span> ./threatforged --phase adcs</div>
-        <div><span class="t-out">[*] Enumerating certificate templates...</span></div>
-        <div><span class="t-threat">[!] ESC1: UserCert_v2 — enrollee supplies subject</span></div>
-        <div><span class="t-threat">[!] ESC8: HTTP enrollment endpoint exposed</span></div>
-        <div>&nbsp;</div>
-        <div><span class="t-prompt">$</span> ./threatforged --phase escalate</div>
-        <div><span class="t-out">[*] Coercing DC via PetitPotam...</span></div>
-        <div><span class="t-threat">[!] DCSync complete — all hashes dumped</span></div>
-        <div><span class="t-prompt">_</span><span class="cursor"></span></div>
-      </div>
+      <div class="terminal-body" id="term-body"></div>
     </div>
   </div>
 </section>
@@ -560,8 +548,8 @@
       <div class="contact-detail"><span class="cd-label">Response time</span><span class="cd-val">Within 24 hours</span></div>
       <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="mailto:ryan@threatforged.ai">ryan@threatforged.ai</a></span></div>
       <div class="contact-detail"><span class="cd-label">Engagement type</span><span class="cd-val">Scoped, fixed-price assessments</span></div>
-      <div class="contact-detail"><span class="cd-label">Sectors served</span><span class="cd-val">Any SMB under 200 employees running Active Directory — credit unions, law firms, manufacturers, MSPs, healthcare, and more</span></div>
-      <div class="contact-detail"><span class="cd-label">Location</span><span class="cd-val">Austin, TX. Remote assessments available nationwide.</span></div>
+      <div class="contact-detail"><span class="cd-label">Sectors served</span><span class="cd-val">Any SMB running Active Directory — credit unions, law firms, manufacturers, MSPs, healthcare, and more</span></div>
+      <div class="contact-detail"><span class="cd-label">Location</span><span class="cd-val">Austin, TX — remote assessments available nationwide</span></div>
     </div>
   </div>
 </section>
@@ -591,6 +579,90 @@
 </footer>
 
 <script src="scripts.js"></script>
+
+<script>
+(function () {
+  var body = document.getElementById('term-body');
+  if (!body) return;
+
+  // [type, text, cssClass, delayBeforeMs]
+  // type: 'cmd' = typed char-by-char | 'out' = instant | 'wait' = pause only
+  var SEQ = [
+    ['cmd',  './threatforged --target corp.local --phase enum'],
+    ['out',  '[*] Initializing BloodHound collection...', 't-out', 350],
+    ['out',  '[+] Users: 847   Groups: 134   Computers: 203', 't-val', 900],
+    ['out',  '[+] Trusts: 2   GPOs: 47   Unconstrained deleg: 4', 't-val', 200],
+    ['out',  '[!] Kerberoastable accounts: 12   AS-REP Roastable: 3', 't-threat', 300],
+    ['wait', 650],
+    ['cmd',  './threatforged --phase relay --iface eth0', 800],
+    ['out',  '[*] Responder active — 192.168.1.100', 't-out', 300],
+    ['out',  '[*] Waiting for LLMNR/NBT-NS queries...', 't-out', 200],
+    ['out',  '[+] Hash captured — CORP\\jsmith (10.0.0.47)', 't-val', 2700],
+    ['out',  '    $NTLMv2$CORP$jsmith$a3f1c2b4$8846f7eaee8fb117ad56ef3421acc890', 't-hash', 120],
+    ['out',  '[*] Relaying to ADCS HTTP (10.0.0.5)...', 't-out', 450],
+    ['out',  '[+] ESC8 — certificate issued: DC01.corp.local', 't-val', 1500],
+    ['wait', 650],
+    ['cmd',  './threatforged --phase escalate', 750],
+    ['out',  '[*] PetitPotam coercion → DC01.corp.local', 't-out', 350],
+    ['out',  '[+] DC01$ relayed — authentication success', 't-val', 1100],
+    ['out',  '[*] PKINIT — requesting TGT for DC01$...', 't-out', 600],
+    ['out',  '[+] TGT obtained: DC01$@CORP.LOCAL', 't-val', 850],
+    ['out',  '[*] DCSync executing — replicating secrets...', 't-out', 500],
+    ['out',  '[!] krbtgt       : aad3b435b51404ee:31d6cfe0d16ae931bcd4a7a3bcd8e7f1', 't-threat', 850],
+    ['out',  '[!] Administrator: 32ed87bdb5fdc5e9:c46b4c8b9d7a0f21ab3c2d4e5f678901', 't-threat', 280],
+    ['out',  '[!] \u2550\u2550 DOMAIN ADMIN ACHIEVED \u2014 14m 32s \u2550\u2550', 't-threat', 380],
+    ['wait', 4000],
+  ];
+
+  var idx = 0, cursorLine;
+
+  function reset() {
+    body.innerHTML = '';
+    cursorLine = document.createElement('div');
+    cursorLine.innerHTML = '<span class="t-prompt">$ </span><span class="cursor"></span>';
+    body.appendChild(cursorLine);
+    idx = 0;
+    tick();
+  }
+
+  function addLine(el) {
+    body.insertBefore(el, cursorLine);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function tick() {
+    if (idx >= SEQ.length) { reset(); return; }
+    var item = SEQ[idx++];
+    var type = item[0];
+    if (type === 'wait') { setTimeout(tick, item[1] || 400); return; }
+    var delay = item[3] || 0;
+    setTimeout(function () {
+      if (type === 'cmd') {
+        var d = document.createElement('div');
+        var p = document.createElement('span');
+        p.className = 't-prompt'; p.textContent = '$ ';
+        d.appendChild(p);
+        var s = document.createElement('span');
+        d.appendChild(s);
+        addLine(d);
+        var j = 0, txt = item[1];
+        (function type_() {
+          if (j < txt.length) { s.textContent += txt[j++]; setTimeout(type_, 42); }
+          else tick();
+        })();
+      } else {
+        var d = document.createElement('div');
+        if (item[2]) d.className = item[2];
+        d.textContent = item[1];
+        addLine(d);
+        tick();
+      }
+    }, delay);
+  }
+
+  reset();
+})();
+</script>
 
 </body>
 </html>
