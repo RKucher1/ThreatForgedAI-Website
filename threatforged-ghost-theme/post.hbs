@@ -32,7 +32,7 @@
     <div class="sidebar-section">
       <div class="sidebar-label">More posts</div>
       <ul class="sidebar-links">
-        {{#get "posts" limit="5" filter="id:-{{id}}"}}
+        {{#get "posts" limit="6"}}
           {{#foreach posts}}
             <li><a href="{{url}}">{{title}}</a></li>
           {{/foreach}}

@@ -8,7 +8,7 @@
 
 <div class="filter-bar">
   <a href="{{@site.url}}" class="filter-tag {{#unless tag}}active{{/unless}}">All</a>
-  {{#get "tags" limit="all"}}
+  {{#get "tags" limit="50"}}
     {{#foreach tags}}
       <a href="{{url}}" class="filter-tag">{{name}}</a>
     {{/foreach}}
