@@ -76,7 +76,7 @@ body { background: var(--navy); color: var(--steel); font-family: var(--sans); f
 .post-tag:hover { color: var(--cyan); border-color: rgba(0,229,255,0.3); }
 
 /* SIDEBAR */
-.sidebar { padding: 2.5rem 2rem; position: sticky; top: 5rem; align-self: start; }
+.sidebar { padding: 2.5rem 2rem; position: sticky; top: 5rem; align-self: start; min-width: 0; }
 .sidebar-section { margin-bottom: 2.5rem; }
 .sidebar-label { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--steel); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
 .sidebar-links { list-style: none; display: flex; flex-direction: column; }

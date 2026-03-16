@@ -15,7 +15,7 @@
 <meta name="twitter:description" content="Transparent, flat-rate penetration testing. $1,500 per assessment.">
 <meta name="twitter:image" content="https://threatforged.ai/images/og-image.png">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://threatforged.ai/pricing.html">
+<link rel="canonical" href="https://threatforged.ai/pricing">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -66,7 +66,7 @@
 
   /* ROI CALCULATOR */
   #roi { background: var(--navy-dark); }
-  .roi-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .roi-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; width: 100%; }
   .roi-controls { display: flex; flex-direction: column; gap: 1.5rem; }
   .roi-field { display: flex; flex-direction: column; gap: 0.5rem; }
   .roi-field label { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
@@ -101,7 +101,8 @@
 
   /* COMPARISON TABLE */
   #compare { background: var(--navy-dark); }
-  .compare-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 2rem; }
+  .compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 2rem; }
+  .compare-table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 14px; }
   .compare-table th { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--border); color: var(--muted); }
   .compare-table th.highlight { color: var(--cyan); }
   .compare-table td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); color: var(--steel); vertical-align: top; }
@@ -151,6 +152,9 @@
   .mobile-menu a { font-size: 15px; font-weight: 500; color: var(--steel); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
   .mobile-menu a:last-child { border-bottom: none; }
   .mobile-menu .mobile-cta { color: var(--cyan); font-family: var(--mono); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  @media (max-width: 1024px) {
+    .tiers-grid { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
@@ -160,6 +164,12 @@
     .roi-wrap { grid-template-columns: 1fr; }
     .tiers-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; }
+  }
+  @media (max-width: 480px) {
+    section, .page-header { padding: 3rem 1rem; }
+    .page-header { padding-top: 6rem; }
+    .faq-q { padding: 1.25rem 1rem; font-size: 14px; }
+    .faq-a { padding: 0 1rem 1.25rem; }
   }
 </style>
 </head>
@@ -308,6 +318,7 @@
   <div class="section-label">// How We Compare</div>
   <h2 class="section-title">ThreatForged AI vs. the alternatives.</h2>
   <p class="section-sub">Same findings. Fraction of the cost. No security team required to operate it.</p>
+  <div class="compare-table-wrap">
   <table class="compare-table">
     <thead>
       <tr>
@@ -377,7 +388,8 @@
       </tr>
     </tbody>
   </table>
-  
+  </div>
+
   <p style="margin-top: 2rem; font-size: 14px; text-align: center;">
     <a href="about.html" style="color: var(--cyan); text-decoration: none; font-weight: 700; letter-spacing: 0.05em; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">&rarr; Read the full story behind ThreatForged</a>
   </p>
