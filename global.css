@@ -79,6 +79,10 @@ section { padding: 5rem 3rem; }
 .btn-secondary { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); background: transparent; border: 1px solid rgba(0,229,255,0.35); padding: 0.9rem 2rem; text-decoration: none; display: inline-block; cursor: pointer; transition: background 0.2s; }
 .btn-secondary:hover { background: rgba(0,229,255,0.08); }
 
+/* ═══════════════════════════════════════════════ UTILITY */
+.text-link { color: var(--cyan); text-decoration: none; transition: opacity 0.2s; }
+.text-link:hover { opacity: 0.8; }
+
 /* ═══════════════════════════════════════════════ LEGAL CONTENT
    Used on: privacy, terms */
 .legal-wrap { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.02); border: 1px solid var(--border); padding: 3.5rem; }

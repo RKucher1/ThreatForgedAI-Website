@@ -32,7 +32,7 @@
     <li><a href="https://blog.threatforged.ai">Blog</a></li>
   </ul>
   <a href="index.html#contact" class="nav-cta">Book a Demo</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -107,16 +107,7 @@
   </div>
 </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('mobile-menu').classList.toggle('open');
-    document.getElementById('hamburger').classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('mobile-menu').classList.remove('open');
-    document.getElementById('hamburger').classList.remove('open');
-  }
-</script>
+<script src="scripts.js"></script>
 
 </body>
 </html>

@@ -100,7 +100,7 @@
     <li><a href="https://blog.threatforged.ai">Blog</a></li>
   </ul>
   <a href="index.html#contact" class="nav-cta">Book a Demo</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -135,7 +135,7 @@
         <div class="founder-name">Ryan Kucher</div>
         <div class="founder-title">Founder & CEO — ThreatForged AI</div>
         <div class="founder-links">
-          <a href="/cdn-cgi/l/email-protection#8efcf7efe0cefae6fcebeffae8e1fce9ebeaa0efe7"><span class="__cf_email__" data-cfemail="e2909b838ca2968a90878396848d90858786cc838b">[email&#160;protected]</span></a>
+          <a href="mailto:ryan@threatforged.ai">ryan@threatforged.ai</a>
           <a href="https://linkedin.com/in/ryankucher" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://threatforged.ai">threatforged.ai</a>
         </div>
@@ -153,7 +153,7 @@
         <a href="mailto:ryan@threatforged.ai" class="btn-secondary">Email Ryan</a>
       </div>
       <p style="margin-top: 1.5rem; font-size: 14px; font-weight: 500;">
-        <a href="pricing.html" style="color: var(--cyan); text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">&rarr; See what a ThreatForged assessment covers</a>
+        <a href="pricing.html" class="text-link">&rarr; See what a ThreatForged assessment covers</a>
       </p>
       </div>
     </div>
@@ -256,7 +256,7 @@
       </div>
     </div>
     <div>
-      <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="/cdn-cgi/l/email-protection#b3c1cad2ddf3c7dbc1d6d2c7d5dcc1d4d6d79dd2da"><span class="__cf_email__" data-cfemail="a9dbd0c8c7e9ddc1dbccc8ddcfc6dbcecccd87c8c0">[email&#160;protected]</span></a></span></div>
+      <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="mailto:ryan@threatforged.ai">ryan@threatforged.ai</a></span></div>
       <div class="contact-detail"><span class="cd-label">Response time</span><span class="cd-val">Within 24 hours</span></div>
       <div class="contact-detail"><span class="cd-label">Location</span><span class="cd-val">Austin, TX — remote assessments nationwide</span></div>
       <div class="contact-detail"><span class="cd-label">Sectors served</span><span class="cd-val">Any SMB under 200 employees running Active Directory — credit unions, law firms, manufacturers, MSPs, healthcare, and more</span></div>
@@ -288,16 +288,7 @@
   </div>
 </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('mobile-menu').classList.toggle('open');
-    document.getElementById('hamburger').classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('mobile-menu').classList.remove('open');
-    document.getElementById('hamburger').classList.remove('open');
-  }
-</script>
+<script src="scripts.js"></script>
 
 </body>
 </html>

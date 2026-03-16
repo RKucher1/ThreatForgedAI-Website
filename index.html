@@ -238,7 +238,7 @@
     <li><a href="https://blog.threatforged.ai">Blog</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Book a Demo</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -379,7 +379,7 @@
       <div class="pricing-desc">Expand scope beyond the base 50 IPs. Billed per additional IP assessed.</div>
     </div>
   </div>
-  <div class="pricing-note" style="font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 1.5rem;">
+  <div class="pricing-note">
     Compare: typical consulting firm engagement = $15,000–$30,000. ThreatForged AI delivers the same findings at a fraction of the cost.
   </div>
 </section>
@@ -392,7 +392,7 @@
       <h2 class="section-title">Built by a practitioner, not a product team.</h2>
       <p>ThreatForged AI was founded by Ryan Kucher after years of hands-on AD assessments inside credit unions and community banks. We know your environment because we've broken into ones just like it — legally, under scope, on behalf of clients who needed to know the truth.</p>
       <p>Our AI-assisted methodology combines an automated attack reasoning engine with practitioner-built runbooks covering NTLM relay, ADCS exploitation, coercion techniques, BloodHound analysis, and DCSync. You get the depth of a manual engagement at a fraction of the cost — with a report your IT Director can act on today.</p>
-      <p style="color: var(--cyan); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.05em;">Austin, TX — <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="502229313e10243822353124363f223735347e3139">[email&#160;protected]</a></p>
+      <p style="color: var(--cyan); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.05em;">Austin, TX — <a href="mailto:ryan@threatforged.ai">ryan@threatforged.ai</a></p>
       <a href="#contact" class="btn-primary" style="display: inline-block; margin-top: 1.5rem;">Start a Conversation</a>
     </div>
     <div class="about-terminal">
@@ -420,7 +420,7 @@
 </section>
 
 <!-- BLOG PREVIEW -->
-<section id="blog" style="background: var(--navy);">
+<section id="blog">
   <div class="blog-header">
     <div>
       <div class="section-label">// SMB Intel</div>
@@ -476,7 +476,7 @@
     </form>
     <div>
       <div class="contact-detail"><span class="cd-label">Response time</span><span class="cd-val">Within 24 hours</span></div>
-      <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="/cdn-cgi/l/email-protection#cbb9b2aaa58bbfa3b9aeaabfada4b9acaeafe5aaa2"><span class="__cf_email__" data-cfemail="205259414e60544852454154464f524745440e4149">[email&#160;protected]</span></a></span></div>
+      <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="mailto:ryan@threatforged.ai">ryan@threatforged.ai</a></span></div>
       <div class="contact-detail"><span class="cd-label">Engagement type</span><span class="cd-val">Scoped, fixed-price assessments</span></div>
       <div class="contact-detail"><span class="cd-label">Sectors served</span><span class="cd-val">Any SMB under 200 employees running Active Directory — credit unions, law firms, manufacturers, MSPs, healthcare, and more</span></div>
       <div class="contact-detail"><span class="cd-label">Location</span><span class="cd-val">Austin, TX — remote assessments available nationwide</span></div>
@@ -508,16 +508,7 @@
   </div>
 </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('mobile-menu').classList.toggle('open');
-    document.getElementById('hamburger').classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('mobile-menu').classList.remove('open');
-    document.getElementById('hamburger').classList.remove('open');
-  }
-</script>
+<script src="scripts.js"></script>
 
 </body>
 </html>
