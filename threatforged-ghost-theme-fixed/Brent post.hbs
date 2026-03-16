@@ -1,0 +1,87 @@
+{{!< default}}
+
+{{!-- THIS TAG IS REQUIRED FOR GHOST TO LOAD THE POST --}}
+{{#post}}
+
+<div class="post-hero">
+  <div class="post-meta">
+    {{#primary_tag}}
+      <a href="{{url}}" class="post-cat">{{name}}</a>
+    {{/primary_tag}}
+    <span class="post-date">{{date format="MMMM D, YYYY"}}</span>
+    <span class="post-read-time">{{reading_time minute="1 min read" minutes="% min read"}}</span>
+  </div>
+  <h1>{{title}}</h1>
+  {{#if custom_excerpt}}
+    <p class="post-excerpt-large">{{custom_excerpt}}</p>
+  {{/if}}
+  
+  {{!-- Author Byline --}}
+  {{#primary_author}}
+    <div style="margin-top: 1.5rem; font-family: var(--mono); font-size: 11px; color: var(--cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
+      By {{name}}
+    </div>
+  {{/primary_author}}
+</div>
+
+<div class="post-content-wrap">
+  <div class="post-content">
+    {{content}}
+
+    {{!-- Author Bio Box --}}
+    <div class="post-author-box" style="margin-top: 4rem; padding: 2rem; background: rgba(0,229,255,0.02); border: 1px solid rgba(0,229,255,0.15); border-left: 2px solid var(--cyan);">
+      {{#primary_author}}
+        <h4 class="author-name" style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; line-height: 1.2;">{{name}}</h4>
+        {{#if bio}}
+          <p class="author-bio" style="font-size: 14px; color: var(--steel); line-height: 1.6; margin-bottom: 0;">{{bio}}</p>
+        {{/if}}
+      {{/primary_author}}
+    </div>
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+      <div class="post-tag-list">
+        {{#foreach tags}}
+          <a href="{{url}}" class="post-tag">{{name}}</a>
+        {{/foreach}}
+      </div>
+    </div>
+  </div>
+
+  <aside class="post-sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">More posts</div>
+      <ul class="sidebar-links">
+        {{#get "posts" limit="5" filter="id:-{{id}}"}}
+          {{#foreach posts}}
+            <li><a href="{{url}}">{{title}}</a></li>
+          {{/foreach}}
+        {{/get}}
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Topics</div>
+      <div class="tag-cloud">
+        {{#get "tags" limit="8"}}
+          {{#foreach tags}}
+            <a href="{{url}}" class="sidebar-tag">{{name}}</a>
+          {{/foreach}}
+        {{/get}}
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-cta">
+        <h4>Ready to find what's exploitable?</h4>
+        <p>Book a 30-minute scoping call. No obligation, no sales pitch.</p>
+        <a href="https://threatforged.ai/#contact" class="btn-cta">Book a Demo</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+{{!-- THIS CLOSES THE POST TAG --}}
+{{/post}}
+
+<div class="post-nav">
+  {{#prev_post}}<a href="{{url}}" class="back-link">{{title}}</a>{{/prev_post}}
+  {{#next_post}}<a href="{{url}}" class="next-link">{{title}}</a>{{/next_post}}
+</div>
